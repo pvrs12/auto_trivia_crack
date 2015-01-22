@@ -15,7 +15,7 @@ The settings.conf file is a json file which contains several possible settings f
   * This is the id for which game you will be playing on trivia crack
   * If left blank, the program will list the available games and the user will be prompted
   
-*A note on passwords*
+**A note on passwords**
 
 The password you provide to this program is not stored in anyway by this program. It is however passed in plain text and not even masked on the input to the console.
 Additionally, the trivia crack api uses insecure http so any password you provide to it is passed in clear-text over the network. Be Careful.
