@@ -88,13 +88,17 @@ correct = 0;
 
 while(True):
     questions = get_questions(user_id,game_id,session_id)
-    print (questions.status_code)
+    #print (questions.status_code)
+    if questions.status_code != 200:
+        print("I couldn't get the questsions!")
+        sys.exit(1)
+
     q_js = questions.json()
     
 #    if not q_js['game_status']=='ACTIVE':
 #        print('This game is no longer active!')
 #        break;
-
+	
     if q_js['game_status']=='ENDED':
         print('This game is over! I bet you I won :D')
         break;
@@ -107,6 +111,8 @@ while(True):
         spin_type = spin['type']
 #        if spin['type'] == 'NORMAL':
 #        #not crown spin
+        if spin['type'] == 'CROWN':
+            print("FOR A CROWN")
         question = spin['questions'][0]['question']
         q_id=question['id']
         q_category=question['category']
@@ -137,5 +143,6 @@ while(True):
 #            #crown spin
 #            print("I don't know how to handle a crown yet, so I'm not going to try")
 #            break;
+        print('')
 
 print("I got "+str(correct)+" right before something happened")
