@@ -1,5 +1,7 @@
-# auto_trivia_crack
+# Auto Trivia Crack
 A program which is designed to automagically play a single game of trivia crack, getting every question correct.
+
+`python auto_trivia_crack.py`
 
 The settings.conf file is a json file which contains several possible settings for the script.
 
