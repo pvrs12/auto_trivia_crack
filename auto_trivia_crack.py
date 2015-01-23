@@ -3,6 +3,7 @@
 import requests
 import json
 import sys
+import getpass
 
 base = 'http://api.preguntados.com/api/users/'
 
@@ -45,7 +46,7 @@ user_id=None
 settings = json.loads(content[0])
 if settings['ap_session']=='':
     email = input("Email: ")
-    password = input("Password (not masked!): ")
+    password = getpass.getpass()
     (session_id,user_id) = login(email,password)
     session_id = '='.join(session_id.split('=')[1:])
 else:
